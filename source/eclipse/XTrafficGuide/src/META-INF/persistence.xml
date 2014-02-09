@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+    <persistence-unit name="trafficguide" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<!--<jta-data-source>java:comp/env/ds/trafficguideDS</jta-data-source>-->
+		<class>com.iox.xtraffic.model.ChargeEvent</class>
+		<class>com.iox.xtraffic.model.ChargeRate</class>
+		<class>com.iox.xtraffic.model.Correspondent</class>
+		<class>com.iox.xtraffic.model.Country</class>
+		<class>com.iox.xtraffic.model.Customer</class>
+		<class>com.iox.xtraffic.model.Route</class>
+		<class>com.iox.xtraffic.model.RouteSubscription</class>
+		<class>com.iox.xtraffic.model.Shortcode</class>
+		<class>com.iox.xtraffic.model.State</class>
+		<class>com.iox.xtraffic.model.Stitch</class>
+		<class>com.iox.xtraffic.model.StitchRoute</class>
+		<class>com.iox.xtraffic.model.StitchSubscription</class>
+		<class>com.iox.xtraffic.model.TelcoNetwork</class>
+		<class>com.iox.xtraffic.model.TrafficReport</class>
+		<class>com.iox.xtraffic.model.User</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/trafficguide" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="dexter" />
+            
+            <!-- EclipseLink should create the database schema automatically -->
+            <property name="eclipselink.logging.level" value="FINE"/>
+      		<property name="eclipselink.ddl-generation" value="create-tables"/>
+        </properties>
+    </persistence-unit>
+</persistence>
